@@ -1,0 +1,18 @@
+{
+  "name": "classsound-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.3",
+    "multer": "^2.5.0",
+    "socket.io": "^4.8.4",
+    "uuid": "^11.1.1"
+  }
+}

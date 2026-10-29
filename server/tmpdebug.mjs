@@ -1,0 +1,12 @@
+import { createRoomState, joinRoom, createVote, castVote } from './src/game.js';
+const room = createRoomState('ABCD');
+joinRoom(room,{socketId:'s1',nickname:'Alice'});
+joinRoom(room,{socketId:'s2',nickname:'Bob'});
+joinRoom(room,{socketId:'s3',nickname:'Charlie'});
+const proposal = createVote(room,{initiatorId:'s1',targetId:'s2'});
+console.log('initial', proposal.result);
+console.log('cast1', castVote(room, proposal.id, 's1', 'for'));
+console.log('after1', proposal.result);
+console.log('cast2', castVote(room, proposal.id, 's3', 'for'));
+console.log('after2', proposal.result);
+console.log('room vote', room.votes.get(proposal.id));
